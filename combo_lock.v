@@ -31,6 +31,7 @@ output press_monitor                    // For debugging
     reg unlock_reg, incorrect_reg;
     assign unlock = unlock_reg, incorrect = incorrect_reg;
     assign try_monitor = try;
+  
     // Combinational datapath logic
     
     wire match = (pw == try);
@@ -83,6 +84,7 @@ output press_monitor                    // For debugging
             else if (!enter) next_state = s_rst;
             else begin clr_try = 1; next_state = s_locked; end
         end
+        default: next_state = s_locked;
         endcase
     end
     
