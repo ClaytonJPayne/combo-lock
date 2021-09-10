@@ -3,15 +3,8 @@
 // Engineer: Clayton J. Payne 
 // 
 // Create Date: 09/05/2021 08:48:49 PM
-// Design Name: 
 // Module Name: combo_lock
-// Project Name: 
-// Target Devices: 
-// Tool Versions: 
 // Description: A simple programmable combination lock
-// 
-// Dependencies: 
-// 
 // Revision:
 // Revision 0.01 - File Created
 // Additional Comments: Shifts user-input digits into registers via an IRQ-like mechanism
