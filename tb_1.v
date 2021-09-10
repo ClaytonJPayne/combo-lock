@@ -1,17 +1,11 @@
 `timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
+// Engineer: Clayton Payne
 // 
 // Create Date: 09/06/2021 10:23:14 AM
-// Design Name: 
 // Module Name: tb_1
-// Project Name: 
-// Target Devices: 
-// Tool Versions: 
-// Description: 
-// 
-// Dependencies: 
+// Description: Test bench for combo lock features
+// Dependencies: combo_lock.
 // 
 // Revision:
 // Revision 0.01 - File Created
@@ -49,7 +43,7 @@ module tb_1;
     keypad = 10'b0001000000; #10 keypad = 0; #10;
     enter = 1; #10; enter = 0; #10;
     enter = 1; #10; enter = 0; #10;
-    keypad = 10'b0010000000; #5 keypad = 0; #10;   // Unsuccessfully unlock with incorrect password (7086)
+    keypad = 10'b0010000000; #10 keypad = 0; #10;   // Unsuccessfully unlock with incorrect password (7086)
     keypad = 10'b0000000001; #10 keypad = 0; #10;
     keypad = 10'b0100000000; #10 keypad = 0; #10;
     keypad = 10'b0001000000; #10 keypad = 0; #10;
@@ -66,6 +60,16 @@ module tb_1;
     keypad = 10'b0000000001; #10 keypad = 0; #10;
     keypad = 10'b0100000000; #10 keypad = 0; #10;
     keypad = 10'b0001000000; #10 keypad = 0; #10;
+    enter = 1; #10; enter = 0; #10;
+    enter = 1; #10; enter = 0; #10;
+    keypad = 10'b0010000000; #10 keypad = 0; #10;   
+    keypad = 10'b0000000001; #10 keypad = 0; #10;
+    clr = 1; #10; clr = 0; #10;                     // Clear partial incorrect attempt, then enter correct password
+    keypad = 10'b0100000000; #10 keypad = 0; #10;   
+    keypad = 10'b0000000001; #10 keypad = 0; #10;
+    keypad = 10'b0100000000; #10 keypad = 0; #10;
+    keypad = 10'b0001000000; #10 keypad = 0; #10;
+    enter = 1; #10; enter = 0; #10;
     enter = 1; #10; enter = 0; #10;
     end
 endmodule
